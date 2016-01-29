@@ -9,7 +9,7 @@
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
 // @require     http://shironeko.nekopoly.n-e.kr/static/jquery-2.2.0.min.js
-// @version     b4
+// @version     b5
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -28,12 +28,12 @@
     run();
   } else {
     //console.log('나무픽스(이)가 없습니다.');
-    $('.container-fluid.wiki-article').prepend('<div class="alert alert-success" role="alert" id="nbr_notice"><strong>[알림]</strong><br>나무픽스 버그리포터가 정상적으로 실행되었습니다.</div>');
-    setTimeout(function () {
-      $('#nbr_notice').fadeOut(500, function() {
-        //Stuff to do *after* the animation takes place
-      });
-    }, 2000);*/
+        $('.container-fluid.wiki-article').prepend('<div class="alert alert-danger" role="alert" id="nbr_notice"><strong>[오류!]</strong><br>Namufix Bug Reporter 플러그인은 나무픽스가 없으면 동작하지않습니다!</div>');
+        setTimeout(function () {
+          $('#nbr_notice').fadeOut(500, function() {
+            //Stuff to do *after* the animation takes place
+          });
+        }, 4000);
   }
 });
 
