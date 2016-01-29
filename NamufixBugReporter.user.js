@@ -11,7 +11,7 @@
 // @version     b2
 // @grant       none
 // @run-at      document-end
-// ==UserScript==
+// ==/UserScript==
 
   var nodes = document.querySelectorAll('div[class^="Nama"]');
   var i,
@@ -33,7 +33,7 @@
 function run() {
   var NEwindow_create='<div id="nbr_ne_window" style="background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; z-index: 999999; position: fixed; left: 0px; top: 0px; height: 100%; width: 100%;">'
   +'<div class="TooSimplePopup"><div class="header" style="background:#2D4996">나무픽스 버그리포터</div><div class="container">'
-  +'나무픽스를 이용하는도중 버그가발생하였나요?<br/>'
+  +'<p>나무픽스를 이용하는도중 버그가발생하였나요?</p>'
   +'<span>제목</span><input name="title" type="text" style="width:100%" />'
   +'<span>내용</span><textarea id="nfCodeToBeautify" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
   +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button></div></div></div>';
