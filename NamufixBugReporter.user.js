@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b11
+// @version     b12
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -49,7 +49,7 @@ function run() {
     if(result==""){
       alert("이미지 주소가 없습니다.")
     }else{
-      $('#nbr_bd').val("![image]("+result+")");
+      $('#nbr_bd').append("![image]("+result+")");
     }
   });
   $('#nbr_ne_window').hide(); //숨기기
