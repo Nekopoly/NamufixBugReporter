@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b13
+// @version     b14
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -39,7 +39,7 @@ function run() {
   +'<span style="color:green">TIP:닫기버튼을 눌러도 작성내용은 사라지지않습니다. 단, 인터넷브라우저가 닫히기 전까지.</span><br>'
   +'<span>제목*</span><input name="title" type="text" style="width:100%" id="nbr_tt"/>'
   +'<span>닉네임(이름)</span><input name="names" type="text" style="width:100%" id="nbr_name"/>'
-  +'<span>내용*</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nbr_bd" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
+  +'<span>내용*</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nbr_bd" style="max-height: calc(100vh - 150px); width: 100%; height: 390px; display: block;"></textarea>'
   +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button><button type="button" style="background:#2D4996" id="nbr_send">보내기</button></div></div></div>';
   $('.container-fluid.wiki-article').append(NEwindow_create);
   $('#nbr_close').click(function(event) {
@@ -70,8 +70,8 @@ function run() {
       cache:false,
       datatype:"json",
       data:{"title":title,"body":body,"users":nick},
-      success: function(data) {
-            alert(data);
+      success: function() {
+            alert("의견을 보내주셔서 감사합니다.");
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
       },
     });
