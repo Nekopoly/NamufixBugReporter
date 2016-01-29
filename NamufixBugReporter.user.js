@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        NamufixBugReporter
 // @namespace   http://nekopoly.n-e.kr/
-// @description Nekopoly's Namufix BugReporter
+// @description 네코폴리가 개발한 나무픽스 버그보고 플러그인 입니다.
 // @include     http://no-ssl.namu.wiki/*
 // @include     http://namu.wiki/*
 // @include     https://namu.wiki/*
@@ -9,7 +9,7 @@
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
 // @require     http://shironeko.nekopoly.n-e.kr/static/jquery-2.2.0.min.js
-// @version     b3
+// @version     b4
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -27,7 +27,13 @@
     console.log('나무픽스(이)가 있습니다.');
     run();
   } else {
-    console.log('나무픽스(이)가 없습니다.');
+    //console.log('나무픽스(이)가 없습니다.');
+    $('.container-fluid.wiki-article').prepend('<div class="alert alert-success" role="alert" id="nbr_notice"><strong>[알림]</strong><br>나무픽스 버그리포터가 정상적으로 실행되었습니다.</div>');
+    setTimeout(function () {
+      $('#nbr_notice').fadeOut(500, function() {
+        //Stuff to do *after* the animation takes place
+      });
+    }, 2000);*/
   }
 });
 
