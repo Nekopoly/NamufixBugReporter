@@ -9,7 +9,7 @@
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
 // @require     http://shironeko.nekopoly.n-e.kr/static/jquery-2.2.0.min.js
-// @version     b8
+// @version     b9
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -26,7 +26,7 @@
   if (node >= 7) {
     console.log('나무픽스(이)가 있습니다.');
     run();
-  } else if($('nf-donation').length <= 1){
+  } else if($('#nf-donation').text().length <= 1){
     //console.log('나무픽스(이)가 없습니다.');
         $('.container-fluid.wiki-article').prepend('<div class="alert alert-danger" role="alert" id="nbr_notice"><strong>[오류!]</strong><br>Namufix Bug Reporter 플러그인은 나무픽스가 없으면 동작하지않습니다!</div>');
         setTimeout(function () {
@@ -44,14 +44,22 @@ function run() {
   +'<div class="TooSimplePopup"><div class="header" style="background:#2D4996">나무픽스 버그리포터</div><div class="container">'
   +'<p>나무픽스를 이용하는도중 버그가발생하였나요?</p>'
   +'<p>사진업로드는 imgur.com을 이용해주시길 바랍니다.</p>'
-  +'<span>제목</span><input name="title" type="text" style="width:100%" />'
-  +'<span>내용</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nfCodeToBeautify" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
+  +'<span>제목</span><input name="title" type="text" style="width:100%" id="nbr_tt"/>'
+  +'<span>내용</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nbr_bd" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
   +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button></div></div></div>';
   $('.container-fluid.wiki-article').append(NEwindow_create);
   $('#nbr_close').click(function(event) {
-    $('#nbr_ne_window').fadeOut(500, function() {
-      //Stuff to do *after* the animation takes place
-    });
+    $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
+  });
+  $('#nbr_img').click(function(event) {
+    /* Act on the event */
+    var msg = "이미지주소를 입력하여주십시오. 예)http://i.imgur.com/0LINzxs.jpg";
+    var result = prompt(msg);
+    if(result==""){
+      alert("이미지 주소가 없습니다.")
+    }else{
+
+    }
   });
   $('#nbr_ne_window').hide(); //숨기기
  //-----------------------------------
@@ -63,6 +71,6 @@ function run() {
   }, 2000);*/
   $('.NamaEditor.NEMenu').append('<button title="버그리포트" type="button" class="NamaEditor NEMenuButton" id="bugreport"><span class="ion-bug"></span></button>');
   $('#bugreport').click(function(event) {
-    $('#nbr_ne_window').show();
+    $('#nbr_ne_window').fadeIn(500, function() {});
   });
 }
