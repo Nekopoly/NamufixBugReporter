@@ -6,9 +6,10 @@
 // @include     http://namu.wiki/*
 // @include     https://namu.wiki/*
 // @include     http://issue.namu.wiki/*
+// @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
 // @require     http://shironeko.nekopoly.n-e.kr/static/jquery-2.2.0.min.js
-// @version     b2
+// @version     b3
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
