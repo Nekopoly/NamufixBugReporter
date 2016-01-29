@@ -37,7 +37,7 @@ function run() {
   +'<p>사진업로드는 imgur.com을 이용해주시길 바랍니다.</p>'
   +'<span>제목</span><input name="title" type="text" style="width:100%" id="nbr_tt"/>'
   +'<span>내용</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nbr_bd" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
-  +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button></div></div></div>';
+  +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button><button type="button" style="background:#2D4996" id="nbr_send">보내기</button></div></div></div>';
   $('.container-fluid.wiki-article').append(NEwindow_create);
   $('#nbr_close').click(function(event) {
     $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
@@ -49,7 +49,7 @@ function run() {
     if(result==""){
       alert("이미지 주소가 없습니다.")
     }else{
-
+      $('#nbr_bd').val("![image]("+result+")");
     }
   });
   $('#nbr_ne_window').hide(); //숨기기
