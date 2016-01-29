@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
 // @require     http://shironeko.nekopoly.n-e.kr/static/jquery-2.2.0.min.js
-// @version     1
+// @version     b2
 // @grant       none
 // @run-at      document-end
 // ==UserScript==
