@@ -9,7 +9,7 @@
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
 // @require     http://shironeko.nekopoly.n-e.kr/static/jquery-2.2.0.min.js
-// @version     b6
+// @version     b7
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
