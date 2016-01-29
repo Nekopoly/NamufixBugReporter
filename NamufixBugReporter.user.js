@@ -26,7 +26,7 @@
   if (node >= 7) {
     console.log('나무픽스(이)가 있습니다.');
     run();
-  } else if($('nf-donation').length <= 1)){
+  } else if($('nf-donation').length <= 1){
     //console.log('나무픽스(이)가 없습니다.');
         $('.container-fluid.wiki-article').prepend('<div class="alert alert-danger" role="alert" id="nbr_notice"><strong>[오류!]</strong><br>Namufix Bug Reporter 플러그인은 나무픽스가 없으면 동작하지않습니다!</div>');
         setTimeout(function () {
@@ -45,7 +45,7 @@ function run() {
   +'<p>나무픽스를 이용하는도중 버그가발생하였나요?</p>'
   +'<p>사진업로드는 imgur.com을 이용해주시길 바랍니다.</p>'
   +'<span>제목</span><input name="title" type="text" style="width:100%" />'
-  +'<span>내용</span><button type="button" style="background:#2D4996" id="nbr_img">이미지업로드</button><textarea id="nfCodeToBeautify" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
+  +'<span>내용</span><br><button type="button" style="background:#2D4996" id="nbr_img">이미지업로드</button><textarea id="nfCodeToBeautify" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
   +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button></div></div></div>';
   $('.container-fluid.wiki-article').append(NEwindow_create);
   $('#nbr_close').click(function(event) {
