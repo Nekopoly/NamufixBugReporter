@@ -45,7 +45,7 @@ function run() {
   +'<p>나무픽스를 이용하는도중 버그가발생하였나요?</p>'
   +'<p>사진업로드는 imgur.com을 이용해주시길 바랍니다.</p>'
   +'<span>제목</span><input name="title" type="text" style="width:100%" />'
-  +'<span>내용</span><br><button type="button" style="background:#2D4996" id="nbr_img">이미지업로드</button><textarea id="nfCodeToBeautify" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
+  +'<span>내용</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nfCodeToBeautify" style="max-width: 100vw; max-height: calc(100vh - 150px); width: 400px; height: 390px; display: block;"></textarea>'
   +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button></div></div></div>';
   $('.container-fluid.wiki-article').append(NEwindow_create);
   $('#nbr_close').click(function(event) {
