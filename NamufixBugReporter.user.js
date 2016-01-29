@@ -41,13 +41,12 @@ function run() {
       //Stuff to do *after* the animation takes place
     });
   });
-  $('#nbr_ne_window').hide();
+  $('#nbr_ne_window').hide(); //숨기기
  //-----------------------------------
   $('.container-fluid.wiki-article').prepend('<div class="alert alert-success" role="alert" id="nbr_notice"><strong>[알림]</strong><br>나무픽스 버그리포터가 정상적으로 실행되었습니다.</div>');
   setTimeout(function () {
     $('#nbr_notice').fadeOut(500, function() {
       //Stuff to do *after* the animation takes place
-      $('body').remove("#nbr_notice");
     });
   }, 2000);
   $('.NamaEditor.NEMenu').append('<button title="버그리포트" type="button" class="NamaEditor NEMenuButton" id="bugreport"><span class="ion-bug"></span></button>');
