@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b17
+// @version     b18
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -64,11 +64,6 @@ function run() {
   var nick = $("#nbr_name").val();
   var body = $("#nbr_bd").val();
   $('#nbr_send').click(function(event) {
-	if(title==""){
-		alert("제목이 비어있습니다.");
-	}else if(body==""){
-		alert("내용이 비어있습니다.");
-	}else{
 		$.ajax({
 		url:"https://shironeko.nekopoly.n-e.kr/backend/respons.json",
 		contentType: "application/json",
@@ -85,7 +80,6 @@ function run() {
         alert(request.responseText);
 		}
 		});
-	}
   });
   $('#nbr_ne_window').hide(); //숨기기
  //-----------------------------------
