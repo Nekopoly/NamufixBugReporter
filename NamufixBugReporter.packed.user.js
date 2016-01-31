@@ -1,0 +1,16 @@
+﻿// ==UserScript==
+// @name        NamufixBugReporter
+// @namespace   http://nekopoly.n-e.kr/
+// @description 네코폴리가 개발한 나무픽스 버그보고 플러그인 입니다.
+// @include     http://no-ssl.namu.wiki/*
+// @include     http://namu.wiki/*
+// @include     https://namu.wiki/*
+// @include     http://issue.namu.wiki/*
+// @namespace   http://nekopoly.n-e.kr/
+// @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
+// @version     b16
+// @grant       none
+// @run-at      document-end
+// ==/UserScript==
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('8 A=10.18(\'3[c^="22"]\');8 i,u;$(10).1o(4(){17(i 1j A){u=A[i];E.D(u)}g(u>=7){E.D(\'나무픽스(이)가 있습니다.\');W()}w{E.D(\'나무픽스(이)가 없습니다.\')}});4 W(){8 V=\'<3 9="m" 6="h: 1k(0, 0, 0, 0.5) 1p 1r 1s 0% 0%; z-1A: 1N; 1U: 1X; 1Y: R; 25: R; x: k%; s: k%;">\'+\'<3 c="19"><3 c="1a" 6="h:#t">나무픽스 버그리포터</3><3 c="M">\'+\'<1>나무픽스를 이용하는도중 버그가발생하였나요?</1><l>\'+\'<1>사진업로드는 <a 1q="J://B.y" 1y="1z">B.y</a>을 이용해주시길 바랍니다.</1><l>\'+\'<1 6="Q:1B">별표 로 표시된것은 필수입력입니다.</1><l>\'+\'<1 6="Q:1D">1E:닫기버튼을 눌러도 작성내용은 사라지지않습니다. 단, 인터넷브라우저가 닫히기 전까지.</1><l>\'+\'<1>제목*</1><T Y="d" b="11" 6="s:k%" 9="H"/>\'+\'<1>닉네임(이름)</1><T Y="16" b="11" 6="s:k%" 9="I"/>\'+\'<1>내용*</1><l><2 b="2" 6="h:#t" 9="K">사진첨부</2><L 9="v" 6="1b-x: 1c(1d - 1e); s: k%; x: 1f; 1g: 1h;"></L>\'+\'</3><3 c="1i"><2 b="2" 6="h:#t" 9="N">닫기</2><2 b="2" 6="h:#t" 9="O">보내기</2></3></3></3>\';$(\'.M-1l.1m-1n\').P(V);$(\'#N\').q(4(p){$(\'#m\').S(C,4(){})});$(\'#K\').q(4(p){8 U="이미지주소를 입력하여주십시오. 예)J://i.B.y/1t.1u";8 o=1v(U);g(o===1w){1x}g(o==""){f("이미지 주소가 없습니다.")}w{8 X=$(\'#v\').j();$(\'#v\').j(X+"\\n"+"![1C]("+o+")")}});8 d=$("#H").j();8 Z=$("#I").j();8 r=$("#v").j();$(\'#O\').q(4(p){g(d==""){f("제목이 비어있습니다.")}w g(r==""){f("내용이 비어있습니다.")}w{$.1F({1G:"1H://1I.1J.n-e.1K/1L/1M.F",1O:"1P/F",b:"1Q",1R:1S,1T:"F",G:{"d":d,"r":r,"1V":Z},1W:4(G){f(G);$(\'#m\').S(C,4(){})},12:4(13,1Z,12){f(13.20)}})}});$(\'#m\').21();$(\'.14.23\').P(\'<2 d="버그리포트" b="2" c="14 24" 9="15"><1 c="26-27"></1></2>\');$(\'#15\').q(4(p){$(\'#m\').28(C,4(){})})}',62,133,'|span|button|div|function||style||var|id||type|class|title||alert|if|background||val|100|br|nbr_ne_window||result|event|click|body|width|2D4996|node|nbr_bd|else|height|com||nodes|imgur|500|log|console|json|data|nbr_tt|nbr_name|http|nbr_img|textarea|container|nbr_close|nbr_send|append|color|0px|fadeOut|input|msg|NEwindow_create|run|areaValue|name|nick|document|text|error|request|NamaEditor|bugreport|names|for|querySelectorAll|TooSimplePopup|header|max|calc|100vh|150px|390px|display|block|footer|in|rgba|fluid|wiki|article|ready|none|href|repeat|scroll|0LINzxs|jpg|prompt|null|return|target|new|index|red|image|green|TIP|ajax|url|https|shironeko|nekopoly|kr|backend|respons|999999|contentType|application|POST|cache|false|datatype|position|users|success|fixed|left|status|responseText|hide|Nama|NEMenu|NEMenuButton|top|ion|bug|fadeIn'.split('|'),0,{}))

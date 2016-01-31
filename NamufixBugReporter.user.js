@@ -64,19 +64,28 @@ function run() {
   var nick = $("#nbr_name").val();
   var body = $("#nbr_bd").val();
   $('#nbr_send').click(function(event) {
-    $.ajax({
-      url:"https://shironeko.nekopoly.n-e.kr/backend/respons.json",
-      contentType: "application/json",
-      type:"POST",
-      cache:false,
-      datatype:"json",
-      data:{"title":title,"body":body,"users":nick},
-      success: function(data) {
+	if(title==""){
+		alert("제목이 비어있습니다.");
+	}else if(body==""){
+		alert("내용이 비어있습니다.");  
+	}else{
+		$.ajax({
+		url:"https://shironeko.nekopoly.n-e.kr/backend/respons.json",
+		contentType: "application/json",
+		type:"POST",
+		cache:false,
+		datatype:"json",
+		data:{"title":title,"body":body,"users":nick},
+		success: function(data) {
             //alert("의견을 보내주셔서 감사합니다.");
             alert(data);
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
-      },
-    });
+		},
+		error:function (request, status, error) {
+        alert(request.responseText);
+		}  
+		});
+	}
   });
   $('#nbr_ne_window').hide(); //숨기기
  //-----------------------------------
