@@ -8,9 +8,95 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b16
+// @version     b17
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
+//original backup
+  var nodes = document.querySelectorAll('div[class^="Nama"]');
+  var i,
+  node;
+  $(document).ready(function() {
+     // Stuff to do as soon as the DOM is ready
+  for (i in nodes) {
+    node = nodes[i];
+    console.log(node);
+  }
+  if (node >= 7) {
+    console.log('나무픽스(이)가 있습니다.');
+    run();
+  }else{
+    console.log('나무픽스(이)가 없습니다.');
+  }
+});
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('8 A=10.18(\'3[c^="22"]\');8 i,u;$(10).1o(4(){17(i 1j A){u=A[i];E.D(u)}g(u>=7){E.D(\'나무픽스(이)가 있습니다.\');W()}w{E.D(\'나무픽스(이)가 없습니다.\')}});4 W(){8 V=\'<3 9="m" 6="h: 1k(0, 0, 0, 0.5) 1p 1r 1s 0% 0%; z-1A: 1N; 1U: 1X; 1Y: R; 25: R; x: k%; s: k%;">\'+\'<3 c="19"><3 c="1a" 6="h:#t">나무픽스 버그리포터</3><3 c="M">\'+\'<1>나무픽스를 이용하는도중 버그가발생하였나요?</1><l>\'+\'<1>사진업로드는 <a 1q="J://B.y" 1y="1z">B.y</a>을 이용해주시길 바랍니다.</1><l>\'+\'<1 6="Q:1B">별표 로 표시된것은 필수입력입니다.</1><l>\'+\'<1 6="Q:1D">1E:닫기버튼을 눌러도 작성내용은 사라지지않습니다. 단, 인터넷브라우저가 닫히기 전까지.</1><l>\'+\'<1>제목*</1><T Y="d" b="11" 6="s:k%" 9="H"/>\'+\'<1>닉네임(이름)</1><T Y="16" b="11" 6="s:k%" 9="I"/>\'+\'<1>내용*</1><l><2 b="2" 6="h:#t" 9="K">사진첨부</2><L 9="v" 6="1b-x: 1c(1d - 1e); s: k%; x: 1f; 1g: 1h;"></L>\'+\'</3><3 c="1i"><2 b="2" 6="h:#t" 9="N">닫기</2><2 b="2" 6="h:#t" 9="O">보내기</2></3></3></3>\';$(\'.M-1l.1m-1n\').P(V);$(\'#N\').q(4(p){$(\'#m\').S(C,4(){})});$(\'#K\').q(4(p){8 U="이미지주소를 입력하여주십시오. 예)J://i.B.y/1t.1u";8 o=1v(U);g(o===1w){1x}g(o==""){f("이미지 주소가 없습니다.")}w{8 X=$(\'#v\').j();$(\'#v\').j(X+"\\n"+"![1C]("+o+")")}});8 d=$("#H").j();8 Z=$("#I").j();8 r=$("#v").j();$(\'#O\').q(4(p){g(d==""){f("제목이 비어있습니다.")}w g(r==""){f("내용이 비어있습니다.")}w{$.1F({1G:"1H://1I.1J.n-e.1K/1L/1M.F",1O:"1P/F",b:"1Q",1R:1S,1T:"F",G:{"d":d,"r":r,"1V":Z},1W:4(G){f(G);$(\'#m\').S(C,4(){})},12:4(13,1Z,12){f(13.20)}})}});$(\'#m\').21();$(\'.14.23\').P(\'<2 d="버그리포트" b="2" c="14 24" 9="15"><1 c="26-27"></1></2>\');$(\'#15\').q(4(p){$(\'#m\').28(C,4(){})})}',62,133,'|span|button|div|function||style||var|id||type|class|title||alert|if|background||val|100|br|nbr_ne_window||result|event|click|body|width|2D4996|node|nbr_bd|else|height|com||nodes|imgur|500|log|console|json|data|nbr_tt|nbr_name|http|nbr_img|textarea|container|nbr_close|nbr_send|append|color|0px|fadeOut|input|msg|NEwindow_create|run|areaValue|name|nick|document|text|error|request|NamaEditor|bugreport|names|for|querySelectorAll|TooSimplePopup|header|max|calc|100vh|150px|390px|display|block|footer|in|rgba|fluid|wiki|article|ready|none|href|repeat|scroll|0LINzxs|jpg|prompt|null|return|target|new|index|red|image|green|TIP|ajax|url|https|shironeko|nekopoly|kr|backend|respons|999999|contentType|application|POST|cache|false|datatype|position|users|success|fixed|left|status|responseText|hide|Nama|NEMenu|NEMenuButton|top|ion|bug|fadeIn'.split('|'),0,{}))
+function run() {
+  var NEwindow_create='<div id="nbr_ne_window" style="background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; z-index: 999999; position: fixed; left: 0px; top: 0px; height: 100%; width: 100%;">'
+  +'<div class="TooSimplePopup"><div class="header" style="background:#2D4996">나무픽스 버그리포터</div><div class="container">'
+  +'<span>나무픽스를 이용하는도중 버그가발생하였나요?</span><br>'
+  +'<span>사진업로드는 <a href="http://imgur.com" target="new">imgur.com</a>을 이용해주시길 바랍니다.</span><br>'
+  +'<span style="color:red">별표 로 표시된것은 필수입력입니다.</span><br>'
+  +'<span style="color:green">TIP:닫기버튼을 눌러도 작성내용은 사라지지않습니다. 단, 인터넷브라우저가 닫히기 전까지.</span><br>'
+  +'<span>제목*</span><input name="title" type="text" style="width:100%" id="nbr_tt"/>'
+  +'<span>닉네임(이름)</span><input name="names" type="text" style="width:100%" id="nbr_name"/>'
+  +'<span>내용*</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nbr_bd" style="max-height: calc(100vh - 150px); width: 100%; height: 390px; display: block;"></textarea>'
+  +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button><button type="button" style="background:#2D4996" id="nbr_send">보내기</button></div></div></div>';
+  $('.container-fluid.wiki-article').append(NEwindow_create);
+  $('#nbr_close').click(function(event) {
+    $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
+  });
+  $('#nbr_img').click(function(event) {
+    /* Act on the event */
+    var msg = "이미지주소를 입력하여주십시오. 예)http://i.imgur.com/0LINzxs.jpg";
+    var result = prompt(msg);
+    if(result===null){
+      return;
+    }
+    if(result==""){
+          alert("이미지 주소가 없습니다.")
+        }else{
+          //$('#nbr_bd').append("![image]("+result+")");
+          var areaValue = $('#nbr_bd').val();
+          $('#nbr_bd').val(areaValue +"\n"+"![image]("+result+")");
+      }
+  });
+  var title = $("#nbr_tt").val();
+  var nick = $("#nbr_name").val();
+  var body = $("#nbr_bd").val();
+  $('#nbr_send').click(function(event) {
+	if(title==""){
+		alert("제목이 비어있습니다.");
+	}else if(body==""){
+		alert("내용이 비어있습니다.");
+	}else{
+		$.ajax({
+		url:"https://shironeko.nekopoly.n-e.kr/backend/respons.json",
+		contentType: "application/json",
+		type:"POST",
+		cache:false,
+		datatype:"json",
+		data:{"title":title,"body":body,"users":nick},
+		success: function(data) {
+            //alert("의견을 보내주셔서 감사합니다.");
+            alert(data);
+            $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
+		},
+		error:function (request, status, error) {
+        alert(request.responseText);
+		}
+		});
+	}
+  });
+  $('#nbr_ne_window').hide(); //숨기기
+ //-----------------------------------
+  //$('.container-fluid.wiki-article').prepend('<div class="alert alert-success" role="alert" id="nbr_notice"><strong>[알림]</strong><br>나무픽스 버그리포터가 정상적으로 실행되었습니다.</div>');
+  /*setTimeout(function () {
+    $('#nbr_notice').fadeOut(500, function() {
+      //Stuff to do *after* the animation takes place
+    });
+  }, 2000);*/
+  $('.NamaEditor.NEMenu').append('<button title="버그리포트" type="button" class="NamaEditor NEMenuButton" id="bugreport"><span class="ion-bug"></span></button>');
+  $('#bugreport').click(function(event) {
+    $('#nbr_ne_window').fadeIn(500, function() {});
+  });
+}
