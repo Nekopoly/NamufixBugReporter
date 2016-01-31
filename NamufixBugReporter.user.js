@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b19
+// @version     b21
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -37,11 +37,13 @@ function run() {
   +'<span>사진업로드는 <a href="http://imgur.com" target="new">imgur.com</a>을 이용해주시길 바랍니다.</span><br>'
   +'<span style="color:red">별표 로 표시된것은 필수입력입니다.</span><br>'
   +'<span style="color:green">TIP:닫기버튼을 눌러도 작성내용은 사라지지않습니다. 단, 인터넷브라우저가 닫히기 전까지.</span><br>'
+  +'<span id="loading" style="color:#faa8ff">잠시만 기다려주십시오.</span>'
   +'<span>제목*</span><input name="title" type="text" style="width:100%" id="nbr_tt"/>'
   +'<span>닉네임(이름)</span><input name="names" type="text" style="width:100%" id="nbr_name"/>'
   +'<span>내용*</span><br><button type="button" style="background:#2D4996" id="nbr_img">사진첨부</button><textarea id="nbr_bd" style="max-height: calc(100vh - 150px); width: 100%; height: 390px; display: block;"></textarea>'
   +'</div><div class="footer"><button type="button" style="background:#2D4996" id="nbr_close">닫기</button><button type="button" style="background:#2D4996" id="nbr_send">보내기</button></div></div></div>';
   $('.container-fluid.wiki-article').append(NEwindow_create);
+  $('#loading').hide();
   $('#nbr_close').click(function(event) {
     $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
   });
@@ -77,8 +79,14 @@ function run() {
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
 		},
 		error:function (request, status, error) {
-        alert("실패하였습니다."+request.responseText);
-		}
+        alert("실패:"+request.responseText);
+		},
+    beforesend:function(){
+
+    },
+    complete:function(){
+
+    }
 		});
   });
   $('#nbr_ne_window').hide(); //숨기기
