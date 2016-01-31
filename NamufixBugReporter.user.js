@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b15
+// @version     b16
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -66,6 +66,7 @@ function run() {
   $('#nbr_send').click(function(event) {
     $.ajax({
       url:"https://shironeko.nekopoly.n-e.kr/backend/respons.json",
+      contentType: "application/json",
       type:"POST",
       cache:false,
       datatype:"json",
