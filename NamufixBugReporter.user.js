@@ -82,10 +82,10 @@ function run() {
         alert("실패:"+request.responseText);
 		},
     beforesend:function(){
-
+      $('#loading').show();
     },
     complete:function(){
-
+      $('#loading').hide();
     }
 		});
   });
