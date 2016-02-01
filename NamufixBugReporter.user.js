@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b24
+// @version     b25
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -62,10 +62,10 @@ function run() {
           $('#nbr_bd').val(areaValue +"\n"+"![image]("+result+")");
       }
   });
-  var title = $("#nbr_tt").val();
-  var nick = $("#nbr_name").val();
-  var body = $("#nbr_bd").val();
   $('#nbr_send').click(function(event) {
+    var title = $("#nbr_tt").val();
+    var nick = $("#nbr_name").val();
+    var body = $("#nbr_bd").val();
     $('#loading').show();
     $.ajax({
 		url:"https://shironeko.nekopoly.n-e.kr/backend/index.php",
