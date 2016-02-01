@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b1.32
+// @version     b1.33
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -37,7 +37,6 @@ function run() {
   +'<span>나무픽스를 이용하는도중 버그가발생하였나요?</span><br>'
   +'<span>사진업로드는 <a href="http://imgur.com" target="new">imgur.com</a>을 이용해주시길 바랍니다.</span><br>'
   +'<span style="color:red">별표 로 표시된것은 필수입력입니다.</span><br>'
-  +'<span style="color:green">TIP:닫기버튼을 눌러도 작성내용은 사라지지않습니다. 단, 인터넷브라우저가 닫히기 전까지.</span><br>'
   +'<span id="loading" style="color:#FF42D6">잠시만 기다려주십시오.</span><br>'
   +'<span>제목*</span><input name="title" type="text" style="width:100%" id="nbr_tt"/>'
   +'<span>닉네임(이름)</span><input name="names" type="text" style="width:100%" id="nbr_name"/>'
@@ -46,7 +45,17 @@ function run() {
   $('.container-fluid.wiki-article').append(NEwindow_create);
   $('#loading').hide();
   $('#nbr_close').click(function(event) {
+    if($("#nbr_bd").val() == ""&&$("#nbr_tt").val()==""){
     $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
+  }else{
+    if(confirm("작성내용이 있습니다. 정말닫으시겠습니까?")!=0){
+      $("#nbr_tt").val("");
+      $("#nbr_name").val("");
+      $("#nbr_bd").val("");
+    }else{
+
+    }
+  }
   });
   $('#nbr_img').click(function(event) {
     /* Act on the event */
@@ -81,8 +90,11 @@ function run() {
             var conv_string = JSON.stringify(data);
             var parsed = JSON.parse(conv_string);
             alert(parsed.message);
+            if(parsed.status=="error"||parsed.status=="fuckyou"){
+            }else{
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
-		},
+            }
+    },
     beforesend:function(){
       $('#loading').text("전송중...");
       $('#loading').show();
