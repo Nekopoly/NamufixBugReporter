@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b29
+// @version     b1.30
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -79,7 +79,7 @@ function run() {
 		success: function(data) {
             //alert("의견을 보내주셔서 감사합니다.");
             var parsed = JSON.parse(data);
-            alert(data.message);
+            alert(parsed.message);
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
 		},
     beforesend:function(){
