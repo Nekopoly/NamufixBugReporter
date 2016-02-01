@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b1.31
+// @version     b1.32
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -89,6 +89,7 @@ function run() {
     },
     complete:function(){
       setTimeout(function (){
+       $('#loading').text("잠시만 기다려주십시오...");
        $('#loading').hide();
       },5000);
     },
