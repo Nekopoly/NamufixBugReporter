@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name        NamufixBugReporter
 // @namespace   http://nekopoly.n-e.kr/
 // @description 네코폴리가 개발한 나무픽스 버그보고 플러그인 입니다.
@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b28
+// @version     b29
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -16,6 +16,7 @@
   var nodes = document.querySelectorAll('div[class^="Nama"]');
   var i,
   node;
+  var cerror;
   $(document).ready(function() {
      // Stuff to do as soon as the DOM is ready
   for (i in nodes) {
@@ -77,7 +78,8 @@ function run() {
     data:JSON.stringify({"title":$("#nbr_tt").val(),"body":$("#nbr_bd").val(),"users":$("#nbr_name").val()}),
 		success: function(data) {
             //alert("의견을 보내주셔서 감사합니다.");
-            alert("서버메세지:"+data);
+            var parsed = JSON.parse(data);
+            alert(data.message);
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
 		},
     beforesend:function(){
@@ -85,12 +87,14 @@ function run() {
       $('#loading').show();
     },
     complete:function(){
-      $('#loading').hide();
+      setTimeout(function (){
+       $('#loading').hide();
+      },5000);
     },
     error:function (request, status, error) {
         //alert("실패:"+request.responseText);
-        Isfail();
-        var reqs = request.responseText;
+      cerror ="접속에 실패하였습니다."+request.responseText;
+      Isfail();
 		}
 		});
   });
@@ -109,9 +113,5 @@ function run() {
 }
 function Isfail(){
   $('#loading').show();
-  $('#loading').text("fail"+reqs).css("color","#FF0000");
-  setTimeout(function (){
-    $('#loading').hide();
-    $('#loading').css("color","#FF42D6");
-  },6000);
+  $('#loading').text(cerror);
 }
