@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b26
+// @version     b27
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -89,12 +89,7 @@ function run() {
     },
     error:function (request, status, error) {
         //alert("실패:"+request.responseText);
-        $('#loading').show();
-        $('#loading').text("fail"+request.responseText).css("color","#FF0000");
-        setTimeout(function (){
-          $('#loading').hide();
-          $('#loading').css("color","#FF42D6");
-        },9000);
+        Isfail();
 		}
 		});
   });
@@ -110,4 +105,12 @@ function run() {
   $('#bugreport').click(function(event) {
     $('#nbr_ne_window').fadeIn(500, function() {});
   });
+}
+function Isfail(){
+  $('#loading').show();
+  $('#loading').text("fail"+request.responseText).css("color","#FF0000");
+  setTimeout(function (){
+    $('#loading').hide();
+    $('#loading').css("color","#FF42D6");
+  },6000);
 }
