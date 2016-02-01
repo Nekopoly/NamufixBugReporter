@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b23
+// @version     b24
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -67,8 +67,9 @@ function run() {
   var body = $("#nbr_bd").val();
   $('#nbr_send').click(function(event) {
     $('#loading').show();
-		$.ajax({
-		url:"https://shironeko.nekopoly.n-e.kr/backend/respons.json",
+    $.ajax({
+		url:"https://shironeko.nekopoly.n-e.kr/backend/index.php",
+    //url:"http://localhost:8000/index.php",
 		contentType: "application/json",
 		type:"POST",
 		cache:false,
@@ -87,8 +88,13 @@ function run() {
       $('#loading').hide();
     },
     error:function (request, status, error) {
-        alert("실패:"+request.responseText);
-        $('#loading').hide();
+        //alert("실패:"+request.responseText);
+        $('#loading').show();
+        $('#loading').text("fail"+request.responseText).css("color","#FF0000");
+        setTimeout(function (){
+          $('#loading').hide();
+          $('#loading').css("color","#FF42D6");
+        },4000);
 		}
 		});
   });
