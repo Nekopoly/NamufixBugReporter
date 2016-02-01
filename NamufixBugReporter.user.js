@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b1.30
+// @version     b1.31
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -78,7 +78,8 @@ function run() {
     data:JSON.stringify({"title":$("#nbr_tt").val(),"body":$("#nbr_bd").val(),"users":$("#nbr_name").val()}),
 		success: function(data) {
             //alert("의견을 보내주셔서 감사합니다.");
-            var parsed = JSON.parse(data);
+            var conv_string = JSON.stringify(data);
+            var parsed = JSON.parse(conv_string);
             alert(parsed.message);
             $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
 		},
