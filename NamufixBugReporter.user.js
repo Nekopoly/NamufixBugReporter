@@ -8,7 +8,7 @@
 // @include     http://issue.namu.wiki/*
 // @namespace   http://nekopoly.n-e.kr/
 // @downloadURL https://github.com/Nekopoly/NamufixBugReporter/raw/master/NamufixBugReporter.user.js
-// @version     b1.33
+// @version     b1.34
 // @grant       none
 // @run-at      document-end
 // ==/UserScript==
@@ -52,6 +52,7 @@ function run() {
       $("#nbr_tt").val("");
       $("#nbr_name").val("");
       $("#nbr_bd").val("");
+      $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
     }else{
 
     }
@@ -92,7 +93,10 @@ function run() {
             alert(parsed.message);
             if(parsed.status=="error"||parsed.status=="fuckyou"){
             }else{
-            $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
+              $("#nbr_tt").val("");
+              $("#nbr_name").val("");
+              $("#nbr_bd").val("");
+              $('#nbr_ne_window').fadeOut(500, function() {/*Nothing*/});
             }
     },
     beforesend:function(){
